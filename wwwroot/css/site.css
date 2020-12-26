@@ -1,0 +1,71 @@
+﻿body, html{
+  background-color: black;
+}
+a{
+  text-decoration: none;
+}
+h1{
+  color: #fff;
+  text-align: center;
+  font-family: sans-serif;
+}
+.title{
+  position: relative;
+  top: 120px;
+  font-size: 40px;
+}
+
+#green-face{
+  filter: invert(56%) sepia(78%) saturate(3606%) hue-rotate(85deg) brightness(125%) contrast(119%);
+}
+
+#red-face{
+  filter: invert(21%) sepia(99%) saturate(7445%) hue-rotate(0deg) brightness(98%) contrast(115%);
+}
+
+#yellow-face{
+  filter: invert(97%) sepia(59%) saturate(7500%) hue-rotate(354deg) brightness(105%) contrast(105%);
+}
+.container{
+  margin: 10px 60px;
+  border-radius: 15px;
+  height: 200px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: 0.5s;
+}
+.container:hover{
+  width: 230px;
+}
+
+.red, .green, .yellow{
+  transition: 0.5s;
+}
+.red:hover{
+  background-image: url("../images/bad.gif");
+}
+.green:hover{
+  background-image: url("../images/happy.gif");
+}
+.yellow:hover{
+  background-image: url("../images/bored.gif");
+}
+
+.face{
+  opacity: 0.5;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.face:hover{
+  transform: scale(1.15);
+  opacity: 1;
+}
+
+.faces-container{
+  position: absolute;
+  width: 50%;
+  left: 25%;
+  top: 300px;
+  display: flex;
+}
