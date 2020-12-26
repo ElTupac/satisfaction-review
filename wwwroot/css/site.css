@@ -1,8 +1,32 @@
 ﻿body, html{
   background-color: black;
 }
-a{
+a.git-link{
   text-decoration: none;
+  text-transform: uppercase;
+  font-family: sans-serif;
+  color: #fff;
+  font-size: 20px;
+  padding: 10px 20px;
+  position: absolute;
+  top: 30px;
+  left: 20px;
+  border: 5px solid transparent;
+  border-image: url("../images/title-link.gif") 1% stretch;
+  font-weight: 900;
+  transition: 0.5s;
+
+  background-image: url("../images/title-link.gif");
+  background-repeat: no-repeat;
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent;
+  -webkit-font-smoothing: antialiased;
+}
+a.git-link:hover{
+  padding: 12px 22px;
+  top: 29px;
+  left: 19px;
+  font-size: 22px;
 }
 h1{
   color: #fff;
@@ -34,6 +58,7 @@ h1{
   background-repeat: no-repeat;
   background-size: cover;
   transition: 0.5s;
+  position: relative;
 }
 .container:hover{
   width: 230px;
@@ -57,15 +82,27 @@ h1{
   cursor: pointer;
   transition: 0.5s;
 }
-.face:hover{
+.face:hover, .hover{
   transform: scale(1.15);
   opacity: 1;
 }
 
 .faces-container{
   position: absolute;
-  width: 50%;
+  width: 230px;
   left: 25%;
   top: 300px;
   display: flex;
+}
+
+p{
+  color: #fff;
+  font-family: sans-serif;
+}
+
+#text-container{
+  position: absolute;
+  top: -20px;
+  left: 230px;
+  width: 100%;
 }

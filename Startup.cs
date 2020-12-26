@@ -37,7 +37,7 @@ namespace satisfaction_review
                 + ";Server=" + (dbInfo.Split("/")[0]).Split(":")[0] + ";Database=" + dbInfo.Split("/")[1] + ";" + connectionString; */
                 //Only HardCode the credentials when need to make a migration an you have to connect from local pc
                 string connectionString = "User ID=ufxlfoobgktzzs;Password=18920978731068a3dde6154a636791cb7ced735d09994ef856ee119b6ec281d6;" +
-                "Server=ec2-54-158-122-162.compute-1.amazonaws.com;Database=dfslbbpdvp4usq" +
+                "Server=ec2-54-158-122-162.compute-1.amazonaws.com;Database=dfslbbpdvp4usq;" +
                 "SSL Mode=Require; Trust Server Certificate=true;";
                 options.UseNpgsql(connectionString);
             });
