@@ -51,9 +51,9 @@ h1{
   filter: invert(97%) sepia(59%) saturate(7500%) hue-rotate(354deg) brightness(105%) contrast(105%);
 }
 .container{
-  margin: 10px 60px;
-  border-radius: 15px;
-  height: 200px;
+  width: 21.5%;
+  margin: 10px 6%;
+  border-radius: 28px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -61,7 +61,7 @@ h1{
   position: relative;
 }
 .container:hover{
-  width: 230px;
+  transform: scale(1.15);
 }
 
 .red, .green, .yellow{
@@ -74,22 +74,22 @@ h1{
   background-image: url("../images/happy.gif");
 }
 .yellow:hover{
-  background-image: url("../images/bored.gif");
+  background-image: url("../images/bored-min.gif");
 }
 
 .face{
+  width: 100%;
   opacity: 0.5;
   cursor: pointer;
   transition: 0.5s;
 }
 .face:hover, .hover{
-  transform: scale(1.15);
   opacity: 1;
 }
 
 .faces-container{
   position: absolute;
-  width: 230px;
+  width: 50%;
   left: 25%;
   top: 300px;
   display: flex;
@@ -102,16 +102,16 @@ p{
 
 #text-container{
   position: absolute;
-  top: -20px;
-  left: 230px;
-  width: 100%;
+  top: -15px;
+  left: 115%;
+  width: 250%;
 }
 
 #response-container{
   position: absolute;
-  top: 70%;
-  width: 50%;
-  margin: 0 25%;
+  top: 550px;
+  width: 70%;
+  margin: 0 15%;
   color: #fff;
   font-family: sans-serif;
 }
@@ -132,4 +132,69 @@ p{
   background-color: rgba(0, 256, 0, 0.6);
   border: 5px #00ff00 solid;
   border-top-left-radius: 15px;
+}
+
+@media (max-width: 1200px){
+  .title{
+    font-size: 35px;
+    top: 150px;
+  }
+  .faces-container{
+    width: 70%;
+    left: 15%;
+  }
+  #response-container{
+    top: 520px;
+  }
+}
+
+@media (max-width: 800px){
+  a.git-link{
+    width: 30%;
+    left: 32.5%;
+    font-size: 28px;
+    text-align: center;
+    padding: 10px 2.5%;
+  }
+  a.git-link:hover{
+    width: 35%;
+    left: 30%;
+    font-size: 30px;
+  }
+  .title{
+    font-size: 32px;
+  }
+  .faces-container{
+    width: 80%;
+    left: 10%;
+  }
+  #response-container{
+    top: 450px;
+    width: 90%;
+    margin: 0 5%;
+  }
+}
+
+@media (max-width: 520px){
+  .faces-container{
+    width: 95%;
+    left: 2.5%;
+    top: 250px;
+  }
+  .title{
+    font-size: 28px;
+    top: 100px;
+  }
+  a.git-link{
+    width: 40%;
+    left: 27.5%;
+    font-size: 26px;
+    text-align: center;
+    padding: 10px 2.5%;
+  }
+  a.git-link:hover{
+    width: 45%;
+    left: 26%;
+    font-size: 28px;
+  }
 }

@@ -10,7 +10,7 @@
             clicked = true;
             fadeOut(soso);
             fadeOut(good);
-            setToLeft(bad, -640);
+            setToLeft(bad, -70);
             const text = addText("Thanks for voting!", "I'll try to make better codes!", bad);
             fadeIn(text);
             const face = document.getElementById("red-face");
@@ -25,7 +25,7 @@
             clicked = true;
             fadeOut(bad);
             fadeOut(good);
-            setToLeft(soso, -320);
+            setToLeft(soso, -35);
             const text = addText("Thanks for voting!", "I expect the next time you will be glanced", soso);
             fadeIn(text);
             const face = document.getElementById("yellow-face");
@@ -74,8 +74,8 @@ async function setToLeft(element, until){
             cancelAnimationFrame(stopId);
             return;
         }else{
-            progress -= 5;
-            element.style.left = (progress + "px");
+            progress -= 1;
+            element.style.left = (progress + "%");
             stopId = window.requestAnimationFrame(step);
         }
     }
@@ -122,12 +122,12 @@ function sendRating(review){
             const {good, soso, bad} = res.proms;
             const sum = good + soso + bad;
             const goodPercent = good ? Math.round((100 / sum) * good) : 0;
-            const sosopercent = soso ? Math.round((100 / sum) * soso) : 0;
+            const sosoPercent = soso ? Math.round((100 / sum) * soso) : 0;
             const badPercent = bad ? Math.round((100 / sum) * bad) : 0;
             container.innerHTML=`
-                <div id="green" style="width: ${goodPercent}%;"> <p><strong>${goodPercent}%</strong> (${good} votes)</p></div>
-                <div id="yellow" style="width: ${sosopercent}%;"> <p><strong>${sosopercent}%</strong> (${soso} votes)</p></div>
-                <div id="red" style="width: ${badPercent}%;"> <p><strong>${badPercent}%</strong> (${bad} votes)</p></div>
+                <div id="green" style="width: ${goodPercent}%;"> <p><strong>${goodPercent}%</strong> ${goodPercent > 20 ? `(${good} votes)` : ""}</p></div>
+                <div id="yellow" style="width: ${sosoPercent}%;"> <p><strong>${sosoPercent}%</strong> ${sosoPercent > 20 ? `(${soso} votes)` : ""}</p></div>
+                <div id="red" style="width: ${badPercent}%;"> <p><strong>${badPercent}%</strong> ${badPercent > 20 ? `(${bad} votes)` : ""}</p></div>
             `
             fadeIn(container, "flex");
         }else{
