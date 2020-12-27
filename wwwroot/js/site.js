@@ -121,11 +121,13 @@ function sendRating(review){
         if(res.ok){ //res.proms
             const {good, soso, bad} = res.proms;
             const sum = good + soso + bad;
-            //container.style.display = "flex";
+            const goodPercent = good ? Math.round((100 / sum) * good) : 0;
+            const sosopercent = soso ? Math.round((100 / sum) * soso) : 0;
+            const badPercent = bad ? Math.round((100 / sum) * bad) : 0;
             container.innerHTML=`
-                <div id="green" style="width: ${good ? Math.round((100 / sum) * good) : 0}%;"> ${good} votes</div>
-                <div id="yellow" style="width: ${soso ? Math.round((100 / sum) * soso) : 0}%;"> ${soso} votes</div>
-                <div id="red" style="width: ${bad ? Math.round((100 / sum) * bad) : 0}%;"> ${bad} votes</div>
+                <div id="green" style="width: ${goodPercent}%;"> <p><strong>${goodPercent}%</strong> (${good} votes)</p></div>
+                <div id="yellow" style="width: ${sosopercent}%;"> <p><strong>${sosopercent}%</strong> (${soso} votes)</p></div>
+                <div id="red" style="width: ${badPercent}%;"> <p><strong>${badPercent}%</strong> (${bad} votes)</p></div>
             `
             fadeIn(container, "flex");
         }else{
