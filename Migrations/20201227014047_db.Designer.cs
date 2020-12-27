@@ -9,7 +9,7 @@ using satisfaction_review.Models;
 namespace satisfaction_review.Migrations
 {
     [DbContext(typeof(ReviewContext))]
-    [Migration("20201226224418_db")]
+    [Migration("20201227014047_db")]
     partial class db
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
