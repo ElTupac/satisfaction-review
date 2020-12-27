@@ -106,3 +106,28 @@ p{
   left: 230px;
   width: 100%;
 }
+
+#response-container{
+  position: absolute;
+  top: 70%;
+  width: 50%;
+  margin: 0 25%;
+  color: #fff;
+  font-family: sans-serif;
+}
+#response-container p{
+  text-align: center;
+  text-decoration: underline;
+}
+#red{
+  background-color: rgba(256, 0, 0, 0.6);
+  border: 5px #ff0000 solid;
+}
+#yellow{
+  background-color: rgba(256, 256, 0, 0.6);
+  border: 5px #ffff00 solid;
+}
+#green{
+  background-color: rgba(0, 256, 0, 0.6);
+  border: 5px #00ff00 solid;
+}

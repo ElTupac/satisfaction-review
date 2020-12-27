@@ -93,11 +93,11 @@ function addText(title, paragraph, container){
     return text;
 }
 
-async function fadeIn(element){
+async function fadeIn(element, display){
     let stopId;
     let progress = 0;
     element.style.opacity = progress;
-    element.style.display = "block";
+    element.style.display = display ? display : "block";
     function step(timestamp){
         if(progress >= 1){
             cancelAnimationFrame(stopId);
@@ -117,10 +117,23 @@ function sendRating(review){
     URL = `${URL}/Home/AddReview?review=${review}`;
     fetch(URL).then(res => res.json())
     .then(res => {
-        if(res.ok){
-            console.log("Llego", res.proms);
+        const container = document.getElementById("response-container");
+        if(res.ok){ //res.proms
+            const {good, soso, bad} = res.proms;
+            const sum = good + soso + bad;
+            //container.style.display = "flex";
+            container.innerHTML=`
+                <div id="green" style="width: ${good ? Math.round((100 / sum) * good) : 0}%;"> ${good} votes</div>
+                <div id="yellow" style="width: ${soso ? Math.round((100 / sum) * soso) : 0}%;"> ${soso} votes</div>
+                <div id="red" style="width: ${bad ? Math.round((100 / sum) * bad) : 0}%;"> ${bad} votes</div>
+            `
+            fadeIn(container, "flex");
         }else{
-            console.log("Error");
+            container.innerHTML = `
+                <h1>Oops, something went wrong and your rating was not submitted</h1>
+                <p>Please, try again later</p>
+            `;
+            fadeIn(container);
         }
     })
 }

@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using satisfaction_review.Models;
-using Newtonsoft.Json;
 using Microsoft.AspNetCore.Http;
 
 namespace satisfaction_review.Controllers
