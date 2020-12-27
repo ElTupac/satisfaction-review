@@ -122,7 +122,6 @@ p{
 #red{
   background-color: rgba(256, 0, 0, 0.6);
   border: 5px #ff0000 solid;
-  border-bottom-right-radius: 15px;
 }
 #yellow{
   background-color: rgba(256, 256, 0, 0.6);
@@ -131,5 +130,4 @@ p{
 #green{
   background-color: rgba(0, 256, 0, 0.6);
   border: 5px #00ff00 solid;
-  border-top-left-radius: 15px;
 }
